@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>旅の準備 · Japanese Learning Setup</title>
+<meta name="description" content="A step-by-step guide to setting up Anki, a pop-up dictionary and tools that turn anime, games and books into flashcards. No technical skills needed.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b1020'/%3E%3Cpath d='M16 5l3 8 8 3-8 3-3 8-3-8-8-3 8-3z' fill='%23dcc08a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#basics">Skip to the guide</a>
+
+<div class="scene" aria-hidden="true">
+  <svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a0f22"/><stop offset=".55" stop-color="#1b2550"/><stop offset=".8" stop-color="#3a3f6e"/><stop offset="1" stop-color="#5a4f72"/></linearGradient>
+      <radialGradient id="glow"><stop offset="0" stop-color="#fbf6e8"/><stop offset=".6" stop-color="#e9e2cc" stop-opacity=".9"/><stop offset="1" stop-color="#e9e2cc" stop-opacity="0"/></radialGradient>
+      <radialGradient id="flower"><stop offset="0" stop-color="#d8e8ff"/><stop offset=".5" stop-color="#7fb0f5"/><stop offset="1" stop-color="#7fb0f5" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect width="1600" height="1000" fill="url(#sky)"/>
+    <g id="stars" fill="#fff"></g>
+    <circle cx="1240" cy="230" r="150" fill="url(#glow)" opacity=".35"/>
+    <circle cx="1240" cy="230" r="62" fill="#f6f1e2"/>
+    <path d="M0 720 L120 640 L240 690 L380 590 L520 670 L640 610 L800 690 L950 600 L1100 660 L1260 570 L1420 650 L1600 600 L1600 1000 L0 1000Z" fill="#232a4f" opacity=".9"/>
+    <path d="M0 790 L160 730 L330 770 L520 715 L700 780 L900 730 L1080 780 L1290 720 L1460 770 L1600 740 L1600 1000 L0 1000Z" fill="#1a2040"/>
+    <g transform="translate(1180 770)" fill="#111632"><path d="M-6 0 L-4 -120 L4 -120 L6 0Z"/><circle cx="0" cy="-150" r="56"/><circle cx="-44" cy="-120" r="38"/><circle cx="46" cy="-118" r="40"/><circle cx="-14" cy="-196" r="34"/><circle cx="28" cy="-186" r="30"/></g>
+    <path d="M0 860 Q400 800 800 840 T1600 820 L1600 1000 L0 1000Z" fill="#141933"/>
+    <g id="meadow"></g>
+  </svg>
+</div>
+<div class="veil" aria-hidden="true"></div>
+<svg class="circle" viewBox="0 0 400 400" aria-hidden="true">
+  <defs><path id="orbit" d="M200 200 m-150 0 a150 150 0 1 1 300 0 a150 150 0 1 1 -300 0"/></defs>
+  <g fill="none" stroke="#dcc08a" stroke-width="1"><circle cx="200" cy="200" r="190"/><circle cx="200" cy="200" r="170"/><circle cx="200" cy="200" r="132"/><circle cx="200" cy="200" r="70"/><polygon points="200,68 314,266 86,266"/><polygon points="200,332 86,134 314,134"/><polygon points="200,130 261,235 139,235" opacity=".7"/></g>
+  <text fill="#dcc08a" font-family="Shippori Mincho" font-size="15" letter-spacing="6"><textPath href="#orbit">言葉を集める旅　聞く　読む　話す　千年の言葉を集める旅　聞く　読む　話す　</textPath></text>
+</svg>
+
+<header class="hero">
+  <p class="eyebrow">A journey of collecting words</p>
+  <h1>旅の準備</h1>
+  <p class="lead">Set up the tools I use to learn Japanese: <strong>Anki</strong> for flashcards, a <strong>pop-up dictionary</strong> that turns any word into a card, and tools that make cards from anime, games and books. You don't need any technical skills. Follow the steps and tick each one off as you go.</p>
+  <ul class="facts">
+    <li><b>Time</b>about 1 hour for the basics</li>
+    <li><b>You need</b>a Windows PC and Google Chrome</li>
+    <li><b>Cost</b>free</li>
+  </ul>
+
+  <section class="paths" aria-labelledby="paths-title">
+    <h2 id="paths-title">Where are you starting from?</h2>
+    <div class="path-grid">
+      <button class="path card" data-path="new" aria-pressed="false">
+        <span class="jp">はじめて</span><span class="en">I'm new</span><span class="desc">New to Anki, or using it without these tools</span>
+      </button>
+      <button class="path card" data-path="migaku" aria-pressed="false">
+        <span class="jp">引っ越し</span><span class="en">I'm coming from Migaku</span><span class="desc">Keep your cards and their history</span>
+      </button>
+      <button class="path card" data-path="other" aria-pressed="false">
+        <span class="jp">他の言語</span><span class="en">Another language</span><span class="desc">Most of this works for other languages too</span>
+      </button>
+    </div>
+    <p class="route" id="route" aria-live="polite"></p>
+  </section>
+</header>
+
+<div class="layout">
+  <button class="toc-toggle" id="toc-toggle" aria-expanded="false" aria-controls="toc">
+    <span>Chapters</span><span class="mini" aria-hidden="true"><span id="mini-bar"></span></span><span id="mini-count">0 / 0</span>
+  </button>
+  <aside class="toc" id="toc">
+    <p class="toc-title">道のり</p>
+    <p class="toc-progress" id="progress-text">0 of 0 steps done</p>
+    <div class="bar" aria-hidden="true"><span id="progress-bar"></span></div>
+    <nav aria-label="Chapters">
+      <ol>
+        <li><a class="part" href="#basics">第一章 · 基礎<small>The basics</small></a>
+          <ol>
+            <li><a href="#backup"><span class="gem"></span>Back up old Anki</a></li>
+            <li><a href="#anki"><span class="gem"></span>Install Anki</a></li>
+            <li><a href="#addons"><span class="gem"></span>Install add-ons</a></li>
+            <li><a href="#onigiri"><span class="gem"></span>Install Onigiri</a></li>
+            <li><a href="#kiku"><span class="gem"></span>FSRS and Kiku</a></li>
+            <li><a href="#hachidori"><span class="gem"></span>Pop-up dictionary</a></li>
+          </ol>
+        </li>
+        <li><a class="part" href="#tools">第二章 · 道具<small>Extra tools</small></a></li>
+        <li><a class="part" href="#migaku">第三章 · 引っ越し<small>Moving from Migaku</small></a>
+          <ol>
+            <li><a href="#m-import"><span class="gem"></span>Get the cards in</a></li>
+            <li><a href="#m-kiku"><span class="gem"></span>Change them to Kiku</a></li>
+            <li><a href="#m-backfill"><span class="gem"></span>Fill in what's missing</a></li>
+          </ol>
+        </li>
+        <li><a class="part" href="#languages">第四章 · 他の言語<small>Other languages</small></a></li>
+        <li><a class="part" href="#help">困った時<small>Something isn't working?</small></a></li>
+      </ol>
+    </nav>
+    <button class="reset" id="reset">Clear my ticks</button>
+  </aside>
+
+  <main class="content" id="main">
+
+    <!-- Part 1 -->
+    <section class="chapter" id="basics">
+      <div class="chapter-head">
+        <div class="num">Chapter one</div>
+        <h2>基礎<span>The basics, for everyone</span></h2>
+        <p>Do these six steps in order. When you're done, you can review cards every day and add new words with one click.</p>
+      </div>
+
+      <article class="step card" id="backup" data-step>
+        <div class="step-head"><div class="step-no">1</div><h3>Back up your old Anki<small>Skip this if you've never used Anki</small></h3></div>
+        <div class="step-body">
+          <ol>
+            <li>Open Anki.</li>
+            <li>Click <span class="menu">File<i>›</i>Export…</span></li>
+            <li>Choose <strong>Anki Collection Package (.colpkg)</strong> and tick <strong>Include media</strong>.</li>
+            <li>Save the file somewhere safe, such as your Desktop.</li>
+          </ol>
+          <label class="check"><input type="checkbox"> Done</label>
+        </div>
+      </article>
+
+      <article class="step card" id="anki" data-step>
+        <div class="step-head"><div class="step-no">2</div><h3>Install the right Anki version<small>The JSchoreels FSRS-7 version of Anki</small></h3></div>
+        <div class="step-body">
+          <p>I use a special version of Anki. It schedules your cards better, and several add-ons below only work with it. It uses the same cards and the same AnkiWeb account as normal Anki.</p>
+          <ol>
+            <li>Close Anki if it's open.</li>
+            <li>Open the download page:<br><a class="btn" href="https://github.com/JSchoreels/anki/releases/latest" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>Anki download page</a></li>
+            <li>Scroll down to <strong>Assets</strong> and click the file that ends in <code>-win-x64.msi</code>.<br><small style="color:var(--muted)">On a Mac with an M chip, take <code>-mac-apple.dmg</code>. On an older Mac, take <code>-mac-intel.dmg</code>.</small></li>
+            <li>Double-click the downloaded file and click <strong>Next</strong> until it's installed.</li>
+            <li>Open Anki. Your decks are still there.</li>
+          </ol>
+          <div class="note"><p>Tested with version <code>26.09.3+fsrs7</code>, builds 109 and 110. If a newer build gives you trouble, pick build 110 from the <a href="https://github.com/JSchoreels/anki/releases" target="_blank" rel="noopener">list of all versions</a>.</p></div>
+          <label class="check"><input type="checkbox"> Done</label>
+        </div>
+      </article>
+
+      <article class="step card" id="addons" data-step>
+        <div class="step-head"><div class="step-no">3</div><h3>Install the add-ons<small>Eleven add-ons in one go</small></h3></div>
+        <div class="step-body">
+          <ol>
+            <li>In Anki, click <span class="menu">Tools<i>›</i>Add-ons<i>›</i>Get Add-ons…</span></li>
+            <li>Click <strong>Copy</strong> below, then paste into the <strong>Code</strong> box with <kbd>Ctrl</kbd> + <kbd>V</kbd>:
+              <div class="copy-box"><code>1635024181 218829258 160848019 1798968356 1542952656 1339555413 408592650 1184164376 1771074083 148002038 1151815987</code><button type="button" data-copy>Copy</button></div>
+            </li>
+            <li>Click <strong>OK</strong> and wait until it's done.</li>
+            <li>Close Anki and open it again.</li>
+          </ol>
+          <div class="note warn"><p><strong>Don't install the normal AnkiConnect</strong> (2055492159). It doesn't work with this Anki version. AnkiConnect Extended, which is in the list above, replaces it.</p></div>
+          <details class="what">
+            <summary style="cursor:pointer;color:var(--gold)">What did I just install?</summary>
+            <div class="table-wrap"><table>
+              <thead><tr><th>Add-on</th><th>What it does</th></tr></thead>
+              <tbody>
+                <tr><td>AnkiConnect Extended</td><td>Lets the dictionary and the other tools add cards to Anki</td></tr>
+                <tr><td>FSRS Helper</td><td>Smarter scheduling, and spreads reviews evenly across days</td></tr>
+                <tr><td>Dynamic Desired Retention</td><td>Lets common words be remembered better than rare ones</td></tr>
+                <tr><td>FSRS Dynamic Preset Selection</td><td>Picks the scheduling settings for each card</td></tr>
+                <tr><td>Change FSRS Version for Presets</td><td>Switches all your decks to FSRS-7 in one click</td></tr>
+                <tr><td>Search Stats Extended</td><td>Better statistics</td></tr>
+                <tr><td>Kiku Note Manager</td><td>Helper for the Kiku card design in Step 5</td></tr>
+                <tr><td>backfill-anki-yomitan</td><td>Fills in missing readings, pitch and definitions later</td></tr>
+                <tr><td>Review Heatmap</td><td>A calendar of the days you studied</td></tr>
+                <tr><td>Japanese Pitch Accent</td><td>Shows pitch accent on cards</td></tr>
+                <tr><td>AJT Media Converter</td><td>Makes images and audio smaller</td></tr>
+              </tbody>
+            </table></div>
+          </details>
+          <label class="check"><input type="checkbox"> Done</label>
+        </div>
+      </article>
+
+      <article class="step card" id="onigiri" data-step>
+        <div class="step-head"><div class="step-no">4</div><h3>Install Onigiri, a nicer look for Anki<small>Use this fixed version</small></h3></div>
+        <div class="step-body">
+          <p>Onigiri replaces Anki's plain home screen with a modern dashboard. The normal Onigiri crashes on this Anki version, so use the fixed one:</p>
+          <ol>
+            <li>Open the download page:<br><a class="btn" href="https://github.com/mattias/Onigiri/releases/latest" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>Onigiri download page</a></li>
+            <li>Under <strong>Assets</strong>, click <code>Onigiri-jschoreels.ankiaddon</code>.</li>
+            <li>Double-click the downloaded file. Anki opens and asks to install it. Click <strong>Yes</strong>.</li>
+            <li>Close Anki and open it again.</li>
+          </ol>
+          <div class="note warn"><p>If Anki ever offers to update Onigiri, <strong>skip it</strong>, because that would bring back the version that crashes. Get updates from the page above instead.</p></div>
+          <label class="check"><input type="checkbox"> Done</label>
+        </div>
+      </article>
+
+      <article class="step card" id="kiku" data-step>
+        <div class="step-head"><div class="step-no">5</div><h3>Turn on FSRS and add the Kiku card design</h3></div>
+        <div class="step-body">
+          <h4 style="margin:0 0 4px;color:var(--silver)">Turn on FSRS</h4>
+          <ol>
+            <li>Next to your deck, click the ⚙ cog, then <strong>Options</strong>.</li>
+            <li>Scroll to <strong>FSRS</strong>, turn it on and choose <strong>FSRS-7</strong>. Click <strong>Save</strong>.</li>
+            <li>Once you have a few hundred reviews, come back and click <strong>Optimize</strong>. Do this about once a month.</li>
+          </ol>
+          <h4 style="margin:18px 0 4px;color:var(--silver)">Add Kiku</h4>
+          <ol>
+            <li>Open the download page:<br><a class="btn" href="https://github.com/youyoumu/kiku/releases/latest" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>Kiku download page</a></li>
+            <li>Under <strong>Assets</strong>, click the file named like <code>Kiku_v….apkg</code>.</li>
+            <li>Double-click the downloaded file. Anki imports it, and you now have a card type called <strong>Kiku</strong>.</li>
+            <li>On Anki's main screen, click <strong>Create Deck</strong> at the bottom and name it <strong>Mining</strong>. New cards go here.</li>
+          </ol>
+          <div class="note"><p>One Kiku card can test you on a word, a sentence or listening. I make most of mine <strong>listening cards</strong>, because my goal is to speak. To make a card a listening card, type <code>x</code> in its <code>IsAudioCard</code> field. More help is in <a href="https://kiku.youyoumu.my.id/installation.html" target="_blank" rel="noopener">Kiku's own guide</a>.</p></div>
+          <label class="check"><input type="checkbox"> Done</label>
+        </div>
+      </article>
+
+      <article class="step card" id="hachidori" data-step>
+        <div class="step-head"><div class="step-no">6</div><h3>Install the pop-up dictionary<small>Hachidori, for Chrome</small></h3></div>
+        <div class="step-body">
+          <p>Hachidori shows what a word means when you point at it on any web page, and adds it to Anki with one click.</p>
+          <ol>
+            <li>Search for <strong>Hachidori</strong> in the <a href="https://chromewebstore.google.com" target="_blank" rel="noopener">Chrome Web Store</a> and click <strong>Add to Chrome</strong>. (Project page: <a href="https://github.com/bee-san/hachidori" target="_blank" rel="noopener">github.com/bee-san/hachidori</a>)</li>
+            <li>Open its settings: click the puzzle-piece icon at the top right of Chrome, then <strong>Hachidori</strong>.</li>
+            <li>Add a dictionary under <strong>Dictionaries</strong>. <a href="https://jitendex.org" target="_blank" rel="noopener">Jitendex</a> is a good one: download its ZIP file and import it <strong>without unzipping it</strong>. A frequency list and a pitch accent dictionary are nice extras.</li>
+            <li>Under <strong>Anki</strong>, choose:
+              <ol>
+                <li>Deck: <strong>Mining</strong></li>
+                <li>Note type: <strong>Kiku</strong></li>
+                <li>Match the fields. Kiku's names match what Hachidori suggests.</li>
+              </ol>
+            </li>
+            <li>Under <span class="menu">Settings<i>›</i>Sharing</span>, turn sharing on and click <strong>Download the Anki add-on</strong>. Double-click the downloaded file to install <strong>Hachidori Relay</strong> in Anki, then restart Anki.</li>
+          </ol>
+          <div class="note ok"><p><strong>Try it:</strong> open any Japanese web page, hold <kbd>Shift</kbd> and point at a word. Click <strong>+</strong> in the pop-up, then check that a new card shows up in your Mining deck.</p></div>
+          <div class="note"><p>Anki has to be open while you add cards. Otherwise there's nowhere to send them.</p></div>
+          <label class="check"><input type="checkbox"> Done</label>
+        </div>
+      </article>
+
+      <div class="card finish">
+        <div class="jp">基礎、完了</div>
+        <p>That's the basics. Do your reviews every day and add new words with Hachidori. Everything below is optional.</p>
+      </div>
+    </section>
+
+    <!-- Part 2 -->
+    <section class="chapter" id="tools">
+      <div class="chapter-head">
+        <div class="num">Chapter two</div>
+        <h2>道具 <span class="optional-tag">optional</span><span>Extra tools: pick what you like</span></h2>
+        <p>Click a tool to see how to install it.</p>
+      </div>
+
+      <details class="tool card">
+        <summary><span class="ico">声</span><span class="t"><b>Irodori Audio: natural voices on your cards</b><span class="d">Reads your sentences aloud with a voice and emotion that fit each one</span></span></summary>
+        <div class="tool-body">
+          <p>Great for cards from books and manga, which have no audio of their own.</p>
+          <div class="note"><p><strong>You need</strong> about 10 GB of free space. An NVIDIA graphics card is recommended. It also works without one, just slowly.</p></div>
+          <h4>Install</h4>
+          <ol>
+            <li>In Anki, click <span class="menu">Tools<i>›</i>Add-ons<i>›</i>Get Add-ons…</span> and paste this code:
+              <div class="copy-box"><code>2078760911</code><button type="button" data-copy>Copy</button></div></li>
+            <li>Restart Anki. A welcome window asks to set up the voice server. Click <strong>Install and start</strong>. This only happens once and takes 5–30 minutes.</li>
+          </ol>
+          <h4>Use</h4>
+          <ol>
+            <li>Click <strong>Browse</strong>, select 3–5 cards and click <span class="menu">Cards<i>›</i>Generate Sentence Audio (Irodori)</span>.</li>
+            <li>Listen to the result. If you like it, do more cards.</li>
+            <li>Changed your mind? <span class="menu">Edit<i>›</i>Undo</span> removes the whole run.</li>
+          </ol>
+          <a class="btn ghost" href="https://github.com/mattias/anki-irodori-audio" target="_blank" rel="noopener">More help</a>
+        </div>
+      </details>
+
+      <details class="tool card">
+        <summary><span class="ico">採</span><span class="t"><b>Anki Miner: many cards at once</b><span class="d">Lists the unknown words in subtitles, audiobooks, manga or novels</span></span></summary>
+        <div class="tool-body">
+          <p>Tick the words you want, and Anki Miner makes the cards with audio and pictures.</p>
+          <ol>
+            <li>Download <code>…-Setup.exe</code> from the download page and install it:<br><a class="btn" href="https://github.com/0xzerolight/anki_miner/releases/latest" target="_blank" rel="noopener">Anki Miner download page</a></li>
+            <li>If Windows warns you, click <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+            <li>Open it and click <span class="menu">Tools<i>›</i>Setup Wizard</span>. It downloads dictionaries for you.</li>
+            <li>In <span class="menu">Settings<i>›</i>Cards &amp; Anki</span>, choose the <strong>Mining</strong> deck and the <strong>Kiku</strong> note type.</li>
+          </ol>
+          <div class="note"><p>The <strong>Audiobooks</strong> tab makes cards with the real narrator's voice, from an audiobook and its text.</p></div>
+        </div>
+      </details>
+
+      <details class="tool card">
+        <summary><span class="ico">遊</span><span class="t"><b>GameSentenceMiner: games and visual novels</b><span class="d">Grabs the text, voice line and a screenshot from the game</span></span></summary>
+        <div class="tool-body">
+          <p>Point at the text with Hachidori and add it just like on a web page.</p>
+          <ol>
+            <li>Download the installer and run it:<br><a class="btn" href="https://github.com/bpwhelan/GameSentenceMiner/releases/latest" target="_blank" rel="noopener">GSM download page</a></li>
+            <li>Follow the setup window it opens.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details class="tool card">
+        <summary><span class="ico">観</span><span class="t"><b>Anime with a pop-up dictionary</b><span class="d">The mpv player with hachidori-mpv and immersion-mpv</span></span></summary>
+        <div class="tool-body">
+          <p>Point at a word in the subtitles to look it up and add it, with the audio and a picture from the scene.</p>
+          <h4>1. Install the mpv player</h4>
+          <ol>
+            <li>Download a Windows build from <a href="https://mpv.io/installation/" target="_blank" rel="noopener">mpv.io/installation</a>.</li>
+            <li>Unzip it to <code>C:\mpv</code>.</li>
+            <li>In the <code>installer</code> folder, right-click <code>mpv-install.bat</code> and choose <strong>Run as administrator</strong>. This makes mpv your video player.</li>
+          </ol>
+          <h4>2. Install Node.js (only used during setup)</h4>
+          <ol><li>Download the <strong>LTS</strong> version from <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a> and click <strong>Next</strong> until it's installed.</li></ol>
+          <h4>3. Install hachidori-mpv</h4>
+          <ol>
+            <li>Open <a href="https://github.com/mattias/hachidori-mpv" target="_blank" rel="noopener">github.com/mattias/hachidori-mpv</a>, then click the green <strong>Code</strong> button and <strong>Download ZIP</strong>.</li>
+            <li>Right-click the ZIP file and choose <strong>Extract All…</strong></li>
+            <li>Open the extracted folder. Click the address bar at the top of the window, type <code>powershell</code> and press <kbd>Enter</kbd>.</li>
+            <li>In the blue window that opens, paste this and press <kbd>Enter</kbd>:
+              <div class="copy-box"><code>powershell -ExecutionPolicy Bypass -File install.ps1</code><button type="button" data-copy>Copy</button></div></li>
+          </ol>
+          <h4>4. Install immersion-mpv (optional)</h4>
+          <p>It counts your listening time, gets Japanese subtitles from Jimaku, and marks episodes as watched on AniList. Do the same as in step 3 with <a href="https://github.com/mattias/immersion-mpv" target="_blank" rel="noopener">github.com/mattias/immersion-mpv</a>. In mpv, press <kbd>Alt</kbd> + <kbd>I</kbd> to open its settings.</p>
+          <div class="note"><p>Chrome with Hachidori, and Anki, must be open while you watch.</p></div>
+        </div>
+      </details>
+
+      <details class="tool card">
+        <summary><span class="ico">読</span><span class="t"><b>Reading books and manga</b><span class="d">E-books and manga you can point at</span></span></summary>
+        <div class="tool-body">
+          <div class="table-wrap"><table>
+            <thead><tr><th>Tool</th><th>For</th></tr></thead>
+            <tbody>
+              <tr><td><a href="https://reader.ttsu.app" target="_blank" rel="noopener">ttsu reader</a></td><td>Japanese e-books (EPUB) in Chrome. Turn on Google Drive sync in its settings.</td></tr>
+              <tr><td>Hoshi Reader</td><td>The same on your phone</td></tr>
+              <tr><td><a href="https://reader.mokuro.app" target="_blank" rel="noopener">Mokuro reader</a></td><td>Manga with text you can point at</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </details>
+
+      <details class="tool card">
+        <summary><span class="ico">選</span><span class="t"><b>What should I read or watch next?</b><span class="d">Find works that fit your level</span></span></summary>
+        <div class="tool-body">
+          <ul>
+            <li><a href="https://jiten.moe" target="_blank" rel="noopener"><strong>Jiten</strong></a> shows how hard thousands of books, games and shows are, and how much of each you already understand.</li>
+            <li><strong>Surasura</strong>: add what you want to read or watch, and you get a word list in the best order to learn.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="tool card">
+        <summary><span class="ico">記</span><span class="t"><b>Immersion Dashboard: see your progress</b><span class="d">Reading, watching, playing and reviews, per day, week, month and year</span></span></summary>
+        <div class="tool-body">
+          <p>Your data stays on your own devices.</p>
+          <ul>
+            <li><strong>Windows:</strong> download <code>Immersion-Dashboard-…-setup.exe</code>, install it and click <strong>Start the journey</strong>. It finds your apps by itself.<br><a class="btn" href="https://github.com/mattias/immersion-dashboard/releases/latest" target="_blank" rel="noopener">Dashboard download page</a></li>
+            <li><strong>Phone or browser:</strong> open <a href="https://mattias.github.io/immersion-dashboard/" target="_blank" rel="noopener">mattias.github.io/immersion-dashboard</a>. On Android you can also install the <code>.apk</code> from the same download page.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <!-- Part 3 -->
+    <section class="chapter" id="migaku">
+      <div class="chapter-head">
+        <div class="num">Chapter three</div>
+        <h2>引っ越し<span>Moving from Migaku</span></h2>
+        <p>Do chapter one first. Your Migaku cards keep all their review history. You give them the Kiku design, then fill in what's missing.</p>
+      </div>
+
+      <article class="step card" id="m-import" data-step>
+        <div class="step-head"><div class="step-no">1</div><h3>Get the cards into Anki<small>Skip this if you used the Migaku Anki add-on: your cards are already in Anki</small></h3></div>
+        <div class="step-body">
+          <ol>
+            <li>In Migaku, export your deck as an <code>.apkg</code> file.</li>
+            <li>Double-click the file to import it into Anki.</li>
+          </ol>
+          <label class="check"><input type="checkbox"> Done</label>
+        </div>
+      </article>
+
+      <article class="step card" id="m-kiku" data-step>
+        <div class="step-head"><div class="step-no">2</div><h3>Change them to Kiku</h3></div>
+        <div class="step-body">
+          <div class="note warn"><p>Make a backup first, as in <a href="#backup">chapter one, step 1</a>.</p></div>
+          <ol>
+            <li>Click <strong>Browse</strong>.</li>
+            <li>In the list on the left, under <strong>Note Types</strong>, click your Migaku note type.</li>
+            <li>Press <kbd>Ctrl</kbd> + <kbd>A</kbd> to select all of them.</li>
+            <li>Click <span class="menu">Notes<i>›</i>Change Note Type…</span> and choose <strong>Kiku</strong>.</li>
+            <li>Match the fields. The left side is Migaku, the right side is Kiku:
+              <div class="table-wrap"><table>
+                <thead><tr><th>Migaku field</th><th>Kiku field</th></tr></thead>
+                <tbody>
+                  <tr><td>Word / Target Word</td><td>Expression</td></tr>
+                  <tr><td>Sentence</td><td>Sentence</td></tr>
+                  <tr><td>Translation</td><td>SentenceTranslation</td></tr>
+                  <tr><td>Definitions</td><td>MainDefinition</td></tr>
+                  <tr><td>Word Audio</td><td>ExpressionAudio</td></tr>
+                  <tr><td>Sentence Audio</td><td>SentenceAudio</td></tr>
+                  <tr><td>Images / Screenshot</td><td>Picture</td></tr>
+                </tbody>
+              </table></div>
+            </li>
+            <li>Click <strong>OK</strong>.</li>
+          </ol>
+          <div class="note"><p>Your Migaku field names may be a little different. Pick whatever looks closest. If you leave a field out, it just isn't copied. If you have more than one Migaku note type, repeat these steps for each one.</p></div>
+          <label class="check"><input type="checkbox"> Done</label>
+        </div>
+      </article>
+
+      <article class="step card" id="m-backfill" data-step>
+        <div class="step-head"><div class="step-no">3</div><h3>Fill in what's missing<small>Readings, frequency, pitch accent and definitions</small></h3></div>
+        <div class="step-body">
+          <p>The backfill add-on from chapter one looks the words up in your Hachidori dictionaries and fills in the empty fields.</p>
+          <ol>
+            <li>Make sure <strong>Anki is open</strong>, Chrome is open, and Hachidori's <span class="menu">Settings<i>›</i>Sharing</span> is on.</li>
+            <li>In Anki, click <strong>Browse</strong> and select <strong>10 cards</strong> to test with first.</li>
+            <li>Click <span class="menu">Edit<i>›</i>Backfill from Yomitan</span>.</li>
+            <li>Under <strong>Preset</strong>, choose <code>lapis.json</code> (it works for Kiku too), then click <strong>Run</strong>.</li>
+            <li>Look at the 10 cards. If they look right, select all your cards and do it again.</li>
+          </ol>
+          <div class="note"><p>If it says it can't connect, restart Anki, open Chrome, and try again. Hachidori Relay gives the add-on the dictionaries while Anki is running.</p></div>
+          <label class="check"><input type="checkbox"> Done</label>
+        </div>
+      </article>
+    </section>
+
+    <!-- Part 4 -->
+    <section class="chapter" id="languages">
+      <div class="chapter-head">
+        <div class="num">Chapter four</div>
+        <h2>他の言語<span>Other languages</span></h2>
+        <p>Most of this works for other languages too. Do chapter one, but swap these parts:</p>
+      </div>
+      <div class="card">
+        <div class="table-wrap" style="margin:0"><table>
+          <thead><tr><th>Part</th><th>Japanese</th><th>Other languages</th></tr></thead>
+          <tbody>
+            <tr><td>Card design</td><td>Kiku</td><td>Anki Miner Note</td></tr>
+            <tr><td>Pop-up dictionary</td><td>Hachidori</td><td><a href="https://yomitan.wiki" target="_blank" rel="noopener">Yomitan</a>, the same idea for many languages</td></tr>
+            <tr><td>Many cards at once</td><td>Anki Miner</td><td>Anki Miner, about 30 languages: choose yours in <span class="menu">Settings<i>›</i>Mining Language</span></td></tr>
+            <tr><td>Fill in missing fields</td><td>backfill + Hachidori</td><td>backfill + Yomitan (turn on Yomitan's API in its settings)</td></tr>
+            <tr><td>Games</td><td>GameSentenceMiner</td><td>GameSentenceMiner, with OCR set to your language</td></tr>
+          </tbody>
+        </table></div>
+        <p style="margin:16px 0 0;color:var(--ink2)">Anki, FSRS, Onigiri and the other add-ons in chapter one are the same for every language.</p>
+      </div>
+    </section>
+
+    <!-- Help -->
+    <section class="chapter" id="help">
+      <div class="chapter-head">
+        <div class="num">When you're stuck</div>
+        <h2>困った時<span>Something isn't working?</span></h2>
+      </div>
+      <div class="card">
+        <div class="table-wrap" style="margin:0"><table>
+          <thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+          <tbody>
+            <tr><td>Hachidori can't reach Anki</td><td>Open Anki. Check that <strong>AnkiConnect Extended</strong> is installed, and not the normal AnkiConnect.</td></tr>
+            <tr><td>Anki shows an error on the home screen</td><td>You probably have the normal Onigiri. Install it again from <a href="#onigiri">chapter one, step 4</a>.</td></tr>
+            <tr><td>An add-on says the Anki version is wrong</td><td>Make sure you installed the Anki version from <a href="#anki">chapter one, step 2</a>.</td></tr>
+            <tr><td>Cards end up in the wrong deck</td><td>Check the deck in Hachidori's <strong>Anki</strong> settings.</td></tr>
+            <tr><td>Irodori is very slow</td><td>Without an NVIDIA graphics card, each sentence takes many seconds. That's normal.</td></tr>
+            <tr><td>Windows warns about an "unknown publisher"</td><td>These are free tools that aren't code-signed. Click <strong>More info</strong>, then <strong>Run anyway</strong>.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <p class="jp">言葉を集める旅に、良い風を。</p>
+  <p>A fan-made guide. Not affiliated with 葬送のフリーレン or with any of the tools listed. Your ticks are saved only in this browser.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
