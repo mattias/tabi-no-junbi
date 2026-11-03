@@ -89,7 +89,7 @@
         <li><a class="part" href="#tools">第二章 · 道具<small>Extra tools</small></a></li>
         <li><a class="part" href="#migaku">第三章 · 引っ越し<small>Moving from Migaku</small></a>
           <ol>
-            <li><a href="#m-import"><span class="gem"></span>Get the cards in</a></li>
+            <li><a href="#m-import"><span class="gem"></span>Export from Migaku</a></li>
             <li><a href="#m-kiku"><span class="gem"></span>Change them to Kiku</a></li>
             <li><a href="#m-backfill"><span class="gem"></span>Fill in what's missing</a></li>
           </ol>
@@ -365,11 +365,31 @@
       </div>
 
       <article class="step card" id="m-import" data-step>
-        <div class="step-head"><div class="step-no">1</div><h3>Get the cards into Anki<small>Skip this if you used the Migaku Anki add-on: your cards are already in Anki</small></h3></div>
+        <div class="step-head"><div class="step-no">1</div><h3>Get the cards out of Migaku<small>With Migaku-Exporter, a small script that runs on Migaku's website</small></h3></div>
         <div class="step-body">
+          <p>Migaku has no normal way to export to Anki, so we use the free <a href="https://github.com/wa-ra-ki/Migaku-Exporter" target="_blank" rel="noopener">Migaku-Exporter</a>. It brings your cards, pictures, audio <strong>and review history</strong> over to Anki.</p>
+          <div class="note warn"><p>Migaku changed its website on 31 October 2026, and <a href="https://github.com/wa-ra-ki/Migaku-Exporter/issues/11" target="_blank" rel="noopener">someone reports</a> that the exporter stopped working after that. Try it anyway. If the <strong>Export to Anki</strong> button never shows up, it's broken for now. Your cards are safe in Migaku, so check back here later.</p></div>
+          <h4 style="margin:18px 0 4px;color:var(--silver)">Install the script</h4>
           <ol>
-            <li>In Migaku, export your deck as an <code>.apkg</code> file.</li>
-            <li>Double-click the file to import it into Anki.</li>
+            <li>Install <strong>Tampermonkey</strong> from the <a href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="noopener">Chrome Web Store</a>. It lets small scripts run on websites.</li>
+            <li>Let it run scripts:
+              <ol>
+                <li>Paste this into Chrome's address bar and press <kbd>Enter</kbd>:
+                  <div class="copy-box"><code>chrome://extensions</code><button type="button" data-copy>Copy</button></div></li>
+                <li>Under Tampermonkey, click <strong>Details</strong> and turn on <strong>Allow User Scripts</strong>. (If you don't see it, turn on <strong>Developer mode</strong> at the top right instead.)</li>
+              </ol>
+            </li>
+            <li>Open the script: <a class="btn ghost" href="https://raw.githubusercontent.com/wa-ra-ki/Migaku-Exporter/main/Javascript.js" target="_blank" rel="noopener">Migaku-Exporter script</a><br>A page full of code opens. Press <kbd>Ctrl</kbd> + <kbd>A</kbd>, then <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy all of it.</li>
+            <li>Click the Tampermonkey icon (under the puzzle piece at the top right of Chrome), then <strong>Create a new script</strong>.</li>
+            <li>In the editor that opens, press <kbd>Ctrl</kbd> + <kbd>A</kbd> and <kbd>Delete</kbd> to remove what's there. Then press <kbd>Ctrl</kbd> + <kbd>V</kbd> to paste, and <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.</li>
+          </ol>
+          <h4 style="margin:18px 0 4px;color:var(--silver)">Export your decks</h4>
+          <ol>
+            <li>Go to <a href="https://study.migaku.com" target="_blank" rel="noopener">study.migaku.com</a>, sign in, open the <strong>Memory</strong> page and wait until it has fully loaded.</li>
+            <li>Click the <strong>+</strong> button at the bottom right, then <strong>Export to Anki</strong>.</li>
+            <li>Pick your decks from the list. Leave the quality on the normal preset.</li>
+            <li>Click <strong>Export selected decks</strong> and wait for the progress bar. Decks with many pictures and audio files can take a while.</li>
+            <li>You get a file called <code>Migaku - <i>deck name</i>.apkg</code> in your Downloads folder. Double-click it to import it into Anki.</li>
           </ol>
           <label class="check"><input type="checkbox"> Done</label>
         </div>
@@ -381,26 +401,28 @@
           <div class="note warn"><p>Make a backup first, as in <a href="#backup">chapter one, step 1</a>.</p></div>
           <ol>
             <li>Click <strong>Browse</strong>.</li>
-            <li>In the list on the left, under <strong>Note Types</strong>, click your Migaku note type.</li>
+            <li>In the list on the left, under <strong>Note Types</strong>, click the note type that came with the export. It has the same name as your card type in Migaku.</li>
             <li>Press <kbd>Ctrl</kbd> + <kbd>A</kbd> to select all of them.</li>
             <li>Click <span class="menu">Notes<i>›</i>Change Note Type…</span> and choose <strong>Kiku</strong>.</li>
             <li>Match the fields. The left side is Migaku, the right side is Kiku:
               <div class="table-wrap"><table>
                 <thead><tr><th>Migaku field</th><th>Kiku field</th></tr></thead>
                 <tbody>
-                  <tr><td>Word / Target Word</td><td>Expression</td></tr>
+                  <tr><td>Word</td><td>Expression</td></tr>
                   <tr><td>Sentence</td><td>Sentence</td></tr>
-                  <tr><td>Translation</td><td>SentenceTranslation</td></tr>
+                  <tr><td>Translated Sentence</td><td>SentenceTranslation</td></tr>
                   <tr><td>Definitions</td><td>MainDefinition</td></tr>
                   <tr><td>Word Audio</td><td>ExpressionAudio</td></tr>
                   <tr><td>Sentence Audio</td><td>SentenceAudio</td></tr>
-                  <tr><td>Images / Screenshot</td><td>Picture</td></tr>
+                  <tr><td>Images</td><td>Picture</td></tr>
+                  <tr><td>Example Sentences, Notes</td><td>(nothing)</td></tr>
                 </tbody>
               </table></div>
             </li>
             <li>Click <strong>OK</strong>.</li>
           </ol>
-          <div class="note"><p>Your Migaku field names may be a little different. Pick whatever looks closest. If you leave a field out, it just isn't copied. If you have more than one Migaku note type, repeat these steps for each one.</p></div>
+          <div class="note"><p>If you changed the field names when exporting, pick whatever looks closest. If you leave a field out, it just isn't copied. If you have more than one Migaku card type, repeat these steps for each one.</p></div>
+          <div class="note ok"><p>Your review history came along, so FSRS can learn from it right away. Open your deck's <strong>Options</strong> and click <strong>Optimize</strong>, as in <a href="#kiku">chapter one, step 5</a>.</p></div>
           <label class="check"><input type="checkbox"> Done</label>
         </div>
       </article>
