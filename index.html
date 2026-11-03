@@ -95,6 +95,7 @@
           </ol>
         </li>
         <li><a class="part" href="#languages">第四章 · 他の言語<small>Other languages</small></a></li>
+        <li><a class="part" href="#workflow">第五章 · 旅の流れ<small>How it all fits together</small></a></li>
         <li><a class="part" href="#help">困った時<small>Something isn't working?</small></a></li>
       </ol>
     </nav>
@@ -295,7 +296,7 @@
         </div>
       </details>
 
-      <details class="tool card">
+      <details class="tool card" id="anki-miner">
         <summary><span class="ico">採</span><span class="t"><b>Anki Miner: many cards at once</b><span class="d">Lists the unknown words in subtitles, audiobooks, manga or novels</span></span></summary>
         <div class="tool-body">
           <p>Tick the words you want, and Anki Miner makes the cards with audio and pictures.</p>
@@ -320,7 +321,7 @@
         </div>
       </details>
 
-      <details class="tool card">
+      <details class="tool card" id="anime">
         <summary><span class="ico">観</span><span class="t"><b>Anime with a pop-up dictionary</b><span class="d">The mpv player with hachidori-mpv and immersion-mpv</span></span></summary>
         <div class="tool-body">
           <p>Point at a word in the subtitles to look it up and add it, with the audio and a picture from the scene.</p>
@@ -346,7 +347,7 @@
         </div>
       </details>
 
-      <details class="tool card">
+      <details class="tool card" id="reading">
         <summary><span class="ico">読</span><span class="t"><b>Reading books and manga</b><span class="d">E-books and manga you can point at</span></span></summary>
         <div class="tool-body">
           <div class="table-wrap"><table>
@@ -365,17 +366,53 @@
         </div>
       </details>
 
+      <details class="tool card" id="surasura">
+        <summary><span class="ico">順</span><span class="t"><b>Surasura: which words to learn next</b><span class="d">A word list made from your own books, anime and videos</span></span></summary>
+        <div class="tool-body">
+          <p><a href="https://github.com/SonicSandbox/surasura" target="_blank" rel="noopener">Surasura</a> reads what you plan to read and watch, and checks which words you already know. Then it lists the words you're missing, with the ones that help you most first. You don't waste time on words you'll never see. It's free, works offline, and does Japanese and Chinese.</p>
+          <h4>1. Install it</h4>
+          <ol>
+            <li>Download the newest <code>.zip</code> file from the download page:<br><a class="btn" href="https://github.com/SonicSandbox/surasura/releases/latest" target="_blank" rel="noopener">Surasura download page</a></li>
+            <li>Right-click the ZIP file and choose <strong>Extract All…</strong></li>
+            <li>Open the folder and double-click <code>Surasura.exe</code>. If Windows warns you, click <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+          </ol>
+          <h4>2. Tell it which words you know</h4>
+          <ol>
+            <li>Keep Anki open.</li>
+            <li>Click <strong>Import Known Vocabulary</strong> and choose Anki. It reads your cards straight from Anki. It can also read your known words from Migaku or Jiten.</li>
+          </ol>
+          <h4>3. Add what you want to read and watch</h4>
+          <ol>
+            <li>Open the <strong>Content Manager</strong>. Add e-books (EPUB), subtitle files, or a YouTube video or playlist. It gets YouTube's subtitles for you.</li>
+            <li>No text file for a game or show? Find it on <a href="https://jiten.moe" target="_blank" rel="noopener">Jiten</a> and download its deck as <strong>Full deck</strong> in <strong>chronological order</strong>. Add that deck in the Content Manager with <strong>Extract</strong>, and Surasura turns it into text it can read. This works for everything on Jiten, games included.</li>
+            <li>Drag each one into a tab:
+              <ul>
+                <li><strong>NOW</strong>: what you're reading or watching in the next two weeks or so.</li>
+                <li><strong>Soon</strong>: what you'll get to within six months.</li>
+                <li><strong>6+ months</strong>: things you'd like to manage one day.</li>
+              </ul></li>
+          </ol>
+          <h4>4. Get your word list</h4>
+          <ol>
+            <li>Click <strong>Generate Journey</strong>. A page opens with your words in the order to learn them, each with example sentences from your own books and shows.</li>
+            <li>It also shows how much of each book or show you already understand, before and after you learn the words.</li>
+          </ol>
+          <div class="note"><p>Two handy extras. <strong>Anki Backlog Order</strong> sorts the new cards waiting in Anki into Surasura's order. Only new cards move, and one click puts the old order back. And next to each word, a link to <a href="https://www.nadeshiko.co" target="_blank" rel="noopener">Nadeshiko</a> finds more real sentences from anime and dramas.</p></div>
+          <p>Stuck? Surasura has its own <a href="https://github.com/SonicSandbox/surasura/blob/main/docs/Surasura%20FAQ.md" target="_blank" rel="noopener">questions and answers</a>. <a href="#workflow">Chapter five</a> shows how I use it every day.</p>
+        </div>
+      </details>
+
       <details class="tool card">
         <summary><span class="ico">選</span><span class="t"><b>What should I read or watch next?</b><span class="d">Find works that fit your level</span></span></summary>
         <div class="tool-body">
           <ul>
             <li><a href="https://jiten.moe" target="_blank" rel="noopener"><strong>Jiten</strong></a> shows how hard thousands of books, games and shows are, and how much of each you already understand.</li>
-            <li><strong>Surasura</strong>: add what you want to read or watch, and you get a word list in the best order to learn.</li>
+            <li><a href="#surasura" data-open><strong>Surasura</strong></a> shows the same for the books and shows you add, using the words you know.</li>
           </ul>
         </div>
       </details>
 
-      <details class="tool card">
+      <details class="tool card" id="dashboard">
         <summary><span class="ico">記</span><span class="t"><b>Immersion Dashboard: see your progress</b><span class="d">Reading, watching, playing and reviews, per day, week, month and year</span></span></summary>
         <div class="tool-body">
           <p>Your data stays on your own devices.</p>
@@ -499,10 +536,77 @@
             <tr><td>Many cards at once</td><td>Anki Miner</td><td>Anki Miner, about 30 languages: choose yours in <span class="menu">Settings<i>›</i>Mining Language</span></td></tr>
             <tr><td>Fill in missing fields</td><td>backfill + Hachidori</td><td>backfill + Yomitan (turn on Yomitan's API in its settings)</td></tr>
             <tr><td>Games</td><td>GameSentenceMiner</td><td>GameSentenceMiner, with OCR set to your language</td></tr>
+            <tr><td>Which words next</td><td>Surasura</td><td>Surasura, for Chinese only</td></tr>
           </tbody>
         </table></div>
         <p style="margin:16px 0 0;color:var(--ink2)">Anki, FSRS, Onigiri and the other add-ons in chapter one are the same for every language.</p>
       </div>
+    </section>
+
+    <!-- Part 5 -->
+    <section class="chapter" id="workflow">
+      <div class="chapter-head">
+        <div class="num">Chapter five</div>
+        <h2>旅の流れ<span>How it all fits together</span></h2>
+        <p>This is how I use the tools day to day. The idea: learn a book's or show's new words <strong>before</strong> you start it. Then you can just enjoy it, without looking words up or stopping to make cards.</p>
+      </div>
+
+      <article class="step card">
+        <div class="step-head"><div class="step-no">1</div><h3>Find the words to learn next<small>With <a href="#surasura" data-open>Surasura</a></small></h3></div>
+        <div class="step-body">
+          <p>Add the book or the show's subtitles to Surasura <strong>before</strong> you start reading or watching. For a game, or anything else without a text file, use its deck from Jiten (see <a href="#surasura" data-open>Surasura</a>). Surasura knows which words you have in Anki, so it lists the words you're missing, the most useful <strong>to you</strong> first. Start at the top of the list. You never need to finish it.</p>
+          <p>The <strong>commonness slider</strong> decides how deep the list goes: only the common words, or nearly all of them. The further you set it, the fewer words you'll meet that you don't know.</p>
+        </div>
+      </article>
+
+      <article class="step card">
+        <div class="step-head"><div class="step-no">2</div><h3>Make as many cards as possible by themselves<small>With <a href="#anki-miner" data-open>Anki Miner</a></small></h3></div>
+        <div class="step-body">
+          <p>Anki Miner can find Surasura's words in your subtitles and books and make the cards for you, with the sentence, audio and a picture.</p>
+          <ol>
+            <li>In Surasura's word list, words you already have a card for show an Anki icon. Copy each word <strong>without</strong> that icon into a text file, one word per line, and save it.</li>
+            <li>In Anki Miner, load the file as a <strong>whitelist</strong>.</li>
+            <li>Set the <strong>frequency limit</strong> to <code>1</code> and turn off the other filters, so it takes every word on the list.</li>
+            <li>Run the same books and episodes you added to Surasura through Anki Miner. It finds the sentences Surasura found and makes the cards.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="step card">
+        <div class="step-head"><div class="step-no">3</div><h3>Add the rest by hand<small>With Nadeshiko</small></h3></div>
+        <div class="step-body">
+          <p>Anki Miner won't find every word. Words that still have no card afterwards get a <a href="https://www.nadeshiko.co" target="_blank" rel="noopener">Nadeshiko</a> link in Surasura. Nadeshiko searches real sentences from anime and dramas for that word. It has its own Anki settings, so you set it up once.</p>
+          <ol>
+            <li>Click the Nadeshiko link next to the word in Surasura.</li>
+            <li>Pick a good sentence and add the word with <a href="#hachidori">Hachidori</a>, just like on any web page. This makes the new card.</li>
+            <li>Under the same sentence, click <strong>Add</strong>, then <strong>Add to Anki (Last added card)</strong>. Nadeshiko puts the audio and the picture on the card you just made.</li>
+          </ol>
+          <div class="note"><p>Keep the sentences short. They're easier to understand by ear and easier to say out loud.</p></div>
+        </div>
+      </article>
+
+      <article class="step card">
+        <div class="step-head"><div class="step-no">4</div><h3>Review in Anki<small>The new cards come in Surasura's order</small></h3></div>
+        <div class="step-body">
+          <p>Use <strong>Anki Backlog Order</strong> (順番) in Surasura to put your new cards in the same order as the list. Do it again when you've added new cards. Then just do your reviews every day. FSRS decides when each card comes back.</p>
+        </div>
+      </article>
+
+      <article class="step card">
+        <div class="step-head"><div class="step-no">5</div><h3>Read, watch and listen<small>The fun part, and the most important one</small></h3></div>
+        <div class="step-body">
+          <ul>
+            <li>Read books in <a href="#reading" data-open>Hoshi Reader</a>.</li>
+            <li>Watch anime in mpv with <a href="#anime" data-open>hachidori-mpv</a>.</li>
+            <li>Watch YouTube, and listen to podcasts and music.</li>
+          </ul>
+          <p>You already know most of the new words, so you don't need to look much up, and you don't stop to make cards. That keeps you in the story.</p>
+          <p>Before the next book or show, add it to Surasura and go back to step 1.</p>
+          <p><a href="#dashboard" data-open>Immersion Dashboard</a> shows how much you read, watch and review, so you can see your progress.</p>
+        </div>
+      </article>
+
+      <div class="note"><p><strong>Coming soon:</strong> Surasura 3.0 talks to Anki Miner directly, so the word file and whitelist aren't needed any more. Surasura makes the sentence cards for exactly the words it wants, and keeps the order of your new cards in Anki up to date by itself. Steps 2 to 4 become one step.</p></div>
     </section>
 
     <!-- Help -->
