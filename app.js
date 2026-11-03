@@ -84,6 +84,12 @@ function choose(p, jump) {
 for (const b of document.querySelectorAll('.path')) b.addEventListener('click', () => choose(b.dataset.path, true));
 if (ROUTES[state.path]) choose(state.path, false);
 
+// A link to a folded tool opens it, also when the address already points there.
+function openTool() { const d = location.hash && document.querySelector(`details${location.hash}`); if (d) d.open = true; }
+addEventListener('hashchange', openTool);
+openTool();
+for (const a of document.querySelectorAll('a[data-open]')) a.addEventListener('click', () => setTimeout(openTool));
+
 // Mobile chapter menu
 const toc = $('toc'), toggle = $('toc-toggle');
 toggle.addEventListener('click', () => {

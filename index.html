@@ -237,6 +237,7 @@
       <div class="card finish">
         <div class="jp">基礎、完了</div>
         <p>That's the basics. Do your reviews every day and add new words with Hachidori. Everything below is optional.</p>
+        <p>Want to review on your phone too? See <a href="#android" data-open>kuma3 Anki for Android</a>.</p>
       </div>
     </section>
 
@@ -247,6 +248,31 @@
         <h2>道具 <span class="optional-tag">optional</span><span>Extra tools: pick what you like</span></h2>
         <p>Click a tool to see how to install it.</p>
       </div>
+
+      <details class="tool card" id="android">
+        <summary><span class="ico">携</span><span class="t"><b>kuma3 Anki: review on your Android phone</b><span class="d">A phone version of the same Anki, so you can carry on where you left off</span></span></summary>
+        <div class="tool-body">
+          <p>kuma3 Anki is AnkiDroid built on the same FSRS-7 version of Anki as in <a href="#anki">chapter one</a>. Your reviews are scheduled the same way on the phone as on your computer. It also has a review heatmap and the time you studied today on each deck.</p>
+          <div class="note"><p><strong>Android only.</strong> It works on almost every phone from the last few years. There's no iPhone version.</p></div>
+          <h4>On your computer first</h4>
+          <ol>
+            <li>In Anki, click <strong>Sync</strong> at the top, so AnkiWeb has all your latest reviews.</li>
+          </ol>
+          <h4>On your phone</h4>
+          <ol>
+            <li>Open the download page on your phone:<br><a class="btn" href="https://github.com/Pedrubik2000/kuma3-anki-app/releases/latest" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>kuma3 Anki download page</a></li>
+            <li>Under <strong>Assets</strong>, tap <code>kuma3-anki-arm64.apk</code>.</li>
+            <li>Open the downloaded file. If the phone asks, allow your browser to <strong>install unknown apps</strong>, then tap <strong>Install</strong>.</li>
+            <li>Open <strong>kuma3 Anki</strong> and tap the sync button. Sign in with your AnkiWeb account.</li>
+            <li>When it asks, choose <strong>Download</strong>. This copies all your cards from AnkiWeb to the phone.</li>
+          </ol>
+          <h4>Every day</h4>
+          <p>Tap <strong>Sync</strong> before and after you review, on both the phone and the computer. Then you always carry on where you left off.</p>
+          <div class="note"><p>kuma3 Anki installs <strong>next to</strong> normal AnkiDroid and keeps its own cards. If you also have AnkiDroid, use only one of them for reviews so you don't get two different histories.</p></div>
+          <div class="note"><p><strong>Using RWKV on your computer?</strong> (That's an extra option in Deck Options for the FSRS-7 version of Anki.) Make the phone use the same model: in kuma3 Anki, open <span class="menu">Settings<i>›</i>kuma3</span> and choose <strong>Small</strong> for the model and <strong>int4 cards, int8 notes</strong> for the state precision. Otherwise the two can pick slightly different cards.</p></div>
+          <a class="btn ghost" href="https://github.com/Pedrubik2000/kuma3-anki-app/blob/rwkv/RWKV.md" target="_blank" rel="noopener">More about kuma3 Anki</a>
+        </div>
+      </details>
 
       <details class="tool card">
         <summary><span class="ico">声</span><span class="t"><b>Irodori Audio: natural voices on your cards</b><span class="d">Reads your sentences aloud with a voice and emotion that fit each one</span></span></summary>
