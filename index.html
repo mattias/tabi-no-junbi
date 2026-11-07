@@ -217,7 +217,7 @@
         <div class="step-body">
           <p>Hachidori shows what a word means when you point at it on any web page, and adds it to Anki with one click.</p>
           <ol>
-            <li>Search for <strong>Hachidori</strong> in the <a href="https://chromewebstore.google.com" target="_blank" rel="noopener">Chrome Web Store</a> and click <strong>Add to Chrome</strong>. (Project page: <a href="https://github.com/bee-san/hachidori" target="_blank" rel="noopener">github.com/bee-san/hachidori</a>)</li>
+            <li>Open Hachidori in the Chrome Web Store and click <strong>Add to Chrome</strong>:<br><a class="btn" href="https://chromewebstore.google.com/detail/hachidori/mikpaebfdmidjnopgffchicnmoahhcbe" target="_blank" rel="noopener">Hachidori in the Chrome Web Store</a><br><small style="color:var(--muted)">Project page: <a href="https://github.com/bee-san/hachidori" target="_blank" rel="noopener">github.com/bee-san/hachidori</a>. The store version can be a little behind. The newest version is on the <a href="https://github.com/bee-san/hachidori/releases/latest" target="_blank" rel="noopener">download page</a>, with install steps for Chrome and Firefox.</small></li>
             <li>Open its settings: click the puzzle-piece icon at the top right of Chrome, then <strong>Hachidori</strong>.</li>
             <li>Add a dictionary under <strong>Dictionaries</strong>. <a href="https://jitendex.org" target="_blank" rel="noopener">Jitendex</a> is a good one: download its ZIP file and import it <strong>without unzipping it</strong>. A frequency list and a pitch accent dictionary are nice extras.</li>
             <li>Under <strong>Anki</strong>, choose:
@@ -231,6 +231,7 @@
           </ol>
           <div class="note ok"><p><strong>Try it:</strong> open any Japanese web page, hold <kbd>Shift</kbd> and point at a word. Click <strong>+</strong> in the pop-up, then check that a new card shows up in your Mining deck.</p></div>
           <div class="note"><p>Anki has to be open while you add cards. Otherwise there's nowhere to send them.</p></div>
+          <div class="note"><p><strong>YouTube too:</strong> turn on <span class="menu">Settings<i>›</i>Advanced<i>›</i>Experimental features<i>›</i>YouTube mining</span> and reload YouTube. Then a card from a caption gets the whole line, its audio and a picture from the video, just like on Netflix.</p></div>
           <label class="check"><input type="checkbox"> Done</label>
         </div>
       </article>
@@ -527,21 +528,33 @@
       <div class="chapter-head">
         <div class="num">Chapter four</div>
         <h2>他の言語<span>Other languages</span></h2>
-        <p>Most of this works for other languages too. Do chapter one, but swap these parts:</p>
+        <p>Most of this works for other languages too. Do chapter one, but swap these parts. Hachidori reads 25 other languages besides Japanese.</p>
       </div>
       <div class="card">
         <div class="table-wrap" style="margin:0"><table>
           <thead><tr><th>Part</th><th>Japanese</th><th>Other languages</th></tr></thead>
           <tbody>
             <tr><td>Card design</td><td>Kiku</td><td>Anki Miner Note</td></tr>
-            <tr><td>Pop-up dictionary</td><td>Hachidori</td><td><a href="https://yomitan.wiki" target="_blank" rel="noopener">Yomitan</a>, the same idea for many languages</td></tr>
+            <tr><td>Pop-up dictionary</td><td>Hachidori</td><td>Hachidori, with your language added (see below)</td></tr>
             <tr><td>Many cards at once</td><td>Anki Miner</td><td>Anki Miner, about 30 languages: choose yours in <span class="menu">Settings<i>›</i>Mining Language</span></td></tr>
-            <tr><td>Fill in missing fields</td><td>backfill + Hachidori</td><td>backfill + Yomitan (turn on Yomitan's API in its settings)</td></tr>
+            <tr><td>Fill in missing fields</td><td>backfill + Hachidori</td><td>backfill + Hachidori, with your language chosen for lookups</td></tr>
             <tr><td>Games</td><td>GameSentenceMiner</td><td>GameSentenceMiner, with OCR set to your language</td></tr>
             <tr><td>Which words next</td><td>Surasura</td><td>Surasura, for Chinese only</td></tr>
           </tbody>
         </table></div>
         <p style="margin:16px 0 0;color:var(--ink2)">Anki, FSRS, Onigiri and the other add-ons in chapter one are the same for every language.</p>
+      </div>
+
+      <div class="card" style="margin-top:18px">
+        <h3 style="margin:0 0 6px;font:700 20px var(--sans);color:var(--silver)">Add your language to Hachidori</h3>
+        <ol style="padding-left:22px">
+          <li>Turn on <span class="menu">Settings<i>›</i>Advanced<i>›</i>Experimental features<i>›</i>Multiple languages</span>. A <strong>Languages</strong> tab shows up under <strong>Advanced</strong>.</li>
+          <li>In the Languages tab, under <strong>Your languages</strong>, pick your language in <strong>Add a language</strong> and click <strong>Add</strong>.</li>
+          <li>Click <strong>Use for lookups</strong> next to it, so web pages are read in that language.</li>
+          <li>Under <span class="menu">Dictionaries<i>›</i>Add</span>, Hachidori lists good dictionaries for that language. Open one's page, download its ZIP file and import it <strong>without unzipping it</strong>.</li>
+          <li>Under <strong>Anki</strong>, choose the deck and the <strong>Anki Miner Note</strong> note type for this language. Each language keeps its own settings.</li>
+        </ol>
+        <div class="note"><p>The languages are Albanian, Ancient Greek, Arabic, Assyrian Neo-Aramaic, Basque, Chinese, English, Esperanto, French, Georgian, German, Greek, Irish, Italian, Korean, Latin, Old Irish, Portuguese, Russian, Serbo-Croatian, Spanish, Tagalog, Ukrainian, Vietnamese and Yiddish. The switch is new and marked experimental, and Hachidori's own menus stay in English. If you don't see it, update Hachidori from its <a href="https://github.com/bee-san/hachidori/releases/latest" target="_blank" rel="noopener">download page</a>. It needs version 0.5.0 or newer.</p></div>
       </div>
     </section>
 
@@ -625,6 +638,7 @@
             <tr><td>Hachidori can't reach Anki</td><td>Open Anki. Check that <strong>AnkiConnect Extended</strong> is installed, and not the normal AnkiConnect.</td></tr>
             <tr><td>Anki shows an error on the home screen</td><td>You probably have the normal Onigiri. Install it again from <a href="#onigiri">chapter one, step 4</a>.</td></tr>
             <tr><td>An add-on says the Anki version is wrong</td><td>Make sure you installed the Anki version from <a href="#anki">chapter one, step 2</a>.</td></tr>
+            <tr><td>Hachidori has no <strong>Multiple languages</strong> switch</td><td>Your Hachidori is older than 0.5.0. Install the newest from its <a href="https://github.com/bee-san/hachidori/releases/latest" target="_blank" rel="noopener">download page</a>.</td></tr>
             <tr><td>Cards end up in the wrong deck</td><td>Check the deck in Hachidori's <strong>Anki</strong> settings.</td></tr>
             <tr><td>Irodori is very slow</td><td>Without an NVIDIA graphics card, each sentence takes many seconds. That's normal.</td></tr>
             <tr><td>Windows warns about an "unknown publisher"</td><td>These are free tools that aren't code-signed. Click <strong>More info</strong>, then <strong>Run anyway</strong>.</td></tr>
