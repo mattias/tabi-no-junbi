@@ -7,8 +7,8 @@ A step-by-step guide to setting up Anki, a pop-up dictionary and tools that turn
 The guide covers:
 
 - the JSchoreels FSRS-7 version of Anki and the add-ons that work with it
-- Onigiri (fixed for that Anki version), the Kiku card design and the Hachidori pop-up dictionary
-- extra tools: kuma3 Anki for Android, Irodori Audio, Anki Miner, Surasura, GameSentenceMiner, mpv with hachidori-mpv and immersion-mpv, readers, and Immersion Dashboard
+- the Kiku card design and the Hachidori pop-up dictionary
+- extra tools: kuma3 Anki for Android, Irodori Audio, Sentence Translate, Listening Practice, Anki Miner, Surasura, GameSentenceMiner, mpv with hachidori-mpv and immersion-mpv, readers, and Immersion Dashboard
 - moving from Migaku, and filling in missing fields with backfill-anki-yomitan
 - Surasura, and the daily workflow: learn the words of a book or show before you start it
 - other languages

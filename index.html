@@ -81,7 +81,6 @@
             <li><a href="#backup"><span class="gem"></span>Back up old Anki</a></li>
             <li><a href="#anki"><span class="gem"></span>Install Anki</a></li>
             <li><a href="#addons"><span class="gem"></span>Install add-ons</a></li>
-            <li><a href="#onigiri"><span class="gem"></span>Install Onigiri</a></li>
             <li><a href="#kiku"><span class="gem"></span>FSRS and Kiku</a></li>
             <li><a href="#hachidori"><span class="gem"></span>Pop-up dictionary</a></li>
           </ol>
@@ -109,7 +108,7 @@
       <div class="chapter-head">
         <div class="num">Chapter one</div>
         <h2>基礎<span>The basics, for everyone</span></h2>
-        <p>Do these six steps in order. When you're done, you can review cards every day and add new words with one click.</p>
+        <p>Do these five steps in order. When you're done, you can review cards every day and add new words with one click.</p>
       </div>
 
       <article class="step card" id="backup" data-step>
@@ -164,7 +163,7 @@
                 <tr><td>FSRS Dynamic Preset Selection</td><td>Picks the scheduling settings for each card</td></tr>
                 <tr><td>Change FSRS Version for Presets</td><td>Switches all your decks to FSRS-7 in one click</td></tr>
                 <tr><td>Search Stats Extended</td><td>Better statistics</td></tr>
-                <tr><td>Kiku Note Manager</td><td>Helper for the Kiku card design in Step 5</td></tr>
+                <tr><td>Kiku Note Manager</td><td>Helper for the Kiku card design in Step 4</td></tr>
                 <tr><td>backfill-anki-yomitan</td><td>Fills in missing readings, pitch and definitions later</td></tr>
                 <tr><td>Review Heatmap</td><td>A calendar of the days you studied</td></tr>
                 <tr><td>Japanese Pitch Accent</td><td>Shows pitch accent on cards</td></tr>
@@ -176,23 +175,8 @@
         </div>
       </article>
 
-      <article class="step card" id="onigiri" data-step>
-        <div class="step-head"><div class="step-no">4</div><h3>Install Onigiri, a nicer look for Anki<small>Use this fixed version</small></h3></div>
-        <div class="step-body">
-          <p>Onigiri replaces Anki's plain home screen with a modern dashboard. The normal Onigiri crashes on this Anki version, so use the fixed one:</p>
-          <ol>
-            <li>Open the download page:<br><a class="btn" href="https://github.com/mattias/Onigiri/releases/latest" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>Onigiri download page</a></li>
-            <li>Under <strong>Assets</strong>, click <code>Onigiri-jschoreels.ankiaddon</code>.</li>
-            <li>Double-click the downloaded file. Anki opens and asks to install it. Click <strong>Yes</strong>.</li>
-            <li>Close Anki and open it again.</li>
-          </ol>
-          <div class="note warn"><p>If Anki ever offers to update Onigiri, <strong>skip it</strong>, because that would bring back the version that crashes. Get updates from the page above instead.</p></div>
-          <label class="check"><input type="checkbox"> Done</label>
-        </div>
-      </article>
-
       <article class="step card" id="kiku" data-step>
-        <div class="step-head"><div class="step-no">5</div><h3>Turn on FSRS and add the Kiku card design</h3></div>
+        <div class="step-head"><div class="step-no">4</div><h3>Turn on FSRS and add the Kiku card design</h3></div>
         <div class="step-body">
           <h4 style="margin:0 0 4px;color:var(--silver)">Turn on FSRS</h4>
           <ol>
@@ -213,7 +197,7 @@
       </article>
 
       <article class="step card" id="hachidori" data-step>
-        <div class="step-head"><div class="step-no">6</div><h3>Install the pop-up dictionary<small>Hachidori, for Chrome</small></h3></div>
+        <div class="step-head"><div class="step-no">5</div><h3>Install the pop-up dictionary<small>Hachidori, for Chrome</small></h3></div>
         <div class="step-body">
           <p>Hachidori shows what a word means when you point at it on any web page, and adds it to Anki with one click.</p>
           <ol>
@@ -549,7 +533,7 @@
             <li>Click <strong>OK</strong>.</li>
           </ol>
           <div class="note"><p>If you changed the field names when exporting, pick whatever looks closest. If you leave a field out, it just isn't copied. If you have more than one Migaku card type, repeat these steps for each one.</p></div>
-          <div class="note ok"><p>Your review history came along, so FSRS can learn from it right away. Open your deck's <strong>Options</strong> and click <strong>Optimize</strong>, as in <a href="#kiku">chapter one, step 5</a>.</p></div>
+          <div class="note ok"><p>Your review history came along, so FSRS can learn from it right away. Open your deck's <strong>Options</strong> and click <strong>Optimize</strong>, as in <a href="#kiku">chapter one, step 4</a>.</p></div>
           <label class="check"><input type="checkbox"> Done</label>
         </div>
       </article>
@@ -590,7 +574,7 @@
             <tr><td>Which words next</td><td>Surasura</td><td>Surasura, for Chinese only</td></tr>
           </tbody>
         </table></div>
-        <p style="margin:16px 0 0;color:var(--ink2)">Anki, FSRS, Onigiri and the other add-ons in chapter one are the same for every language.</p>
+        <p style="margin:16px 0 0;color:var(--ink2)">Anki, FSRS and the add-ons in chapter one are the same for every language.</p>
       </div>
 
       <div class="card" style="margin-top:18px">
@@ -678,7 +662,6 @@
           <thead><tr><th>Problem</th><th>Fix</th></tr></thead>
           <tbody>
             <tr><td>Hachidori can't reach Anki</td><td>Open Anki. Check that <strong>AnkiConnect Extended</strong> is installed, and not the normal AnkiConnect.</td></tr>
-            <tr><td>Anki shows an error on the home screen</td><td>You probably have the normal Onigiri. Install it again from <a href="#onigiri">chapter one, step 4</a>.</td></tr>
             <tr><td>An add-on says the Anki version is wrong</td><td>Make sure you installed the Anki version from <a href="#anki">chapter one, step 2</a>.</td></tr>
             <tr><td>Hachidori has no <strong>Multiple languages</strong> switch</td><td>Your Hachidori is older than 0.5.0. Install the newest from its <a href="https://github.com/bee-san/hachidori/releases/latest" target="_blank" rel="noopener">download page</a>.</td></tr>
             <tr><td>Cards end up in the wrong deck</td><td>Check the deck in Hachidori's <strong>Anki</strong> settings.</td></tr>
