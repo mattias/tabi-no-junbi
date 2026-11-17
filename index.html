@@ -293,7 +293,56 @@
             <li>Listen to the result. If you like it, do more cards.</li>
             <li>Changed your mind? <span class="menu">Edit<i>›</i>Undo</span> removes the whole run.</li>
           </ol>
+          <div class="note"><p>The voice server stops by itself when you haven't used it for a while, so your graphics card's memory is free for other things.</p></div>
           <a class="btn ghost" href="https://github.com/mattias/anki-irodori-audio" target="_blank" rel="noopener">More help</a>
+        </div>
+      </details>
+
+      <details class="tool card" id="translate">
+        <summary><span class="ico">訳</span><span class="t"><b>Sentence Translate: translations and pictures</b><span class="d">Fills in the English sentence, with your word in bold, and can draw a picture</span></span></summary>
+        <div class="tool-body">
+          <p>For cards with no translation, for example from Anki Miner or Nadeshiko. It writes to <code>SentenceTranslation</code> and never changes the Japanese sentence.</p>
+          <h4>Install</h4>
+          <ol>
+            <li>On the download page, click <code>sentence_translate.ankiaddon</code> under <strong>Assets</strong>, double-click it and restart Anki:<br><a class="btn" href="https://github.com/mattias/anki-sentence-translate/releases/latest" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>Sentence Translate download page</a></li>
+            <li>Open <span class="menu">Tools<i>›</i>Sentence Translate settings…</span>, pick an engine and click <strong>Test connection</strong>.</li>
+          </ol>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Engine</th><th>Good to know</th></tr></thead>
+            <tbody>
+              <tr><td>Claude</td><td>Best with names and nuance. About $4 per 1000 cards with Opus. Needs a key from console.anthropic.com, billed apart from a Claude subscription.</td></tr>
+              <tr><td>Gemini</td><td>Free up to a daily limit. Key from aistudio.google.com.</td></tr>
+              <tr><td>Ollama or LM Studio</td><td>Free and offline on your own computer, but more mistakes with names and long sentences.</td></tr>
+            </tbody>
+          </table></div>
+          <h4>Use</h4>
+          <ol>
+            <li>New cards are translated by themselves when they're added. You can turn that off in the settings.</li>
+            <li>For old cards: click <strong>Browse</strong>, select some cards and click <span class="menu">Cards<i>›</i>Translate Sentence (English)</span>. Translations you already have aren't replaced without asking.</li>
+          </ol>
+          <div class="note"><p><strong>Pictures:</strong> <span class="menu">Cards<i>›</i>Add picture of the word</span> draws one into <code>Picture</code>, on your own computer. Words you can't draw get the sentence's scene instead. It needs an NVIDIA graphics card and about 25 GB of space. Set it up under <span class="menu">Tools<i>›</i>Sentence Translate: set up pictures…</span></p></div>
+          <a class="btn ghost" href="https://github.com/mattias/anki-sentence-translate" target="_blank" rel="noopener">More help</a>
+        </div>
+      </details>
+
+      <details class="tool card" id="listening">
+        <summary><span class="ico">聴</span><span class="t"><b>Listening Practice: train your ear on Android</b><span class="d">Loops sentences where you already know every word</span></span></summary>
+        <div class="tool-body">
+          <p>It plays only sentences made of words you know, over and over, and hides the text until you ask. You train your ear, not your reading. Great on a walk or on the bus.</p>
+          <h4>Install</h4>
+          <ol>
+            <li>Open the download page on your phone and tap the <code>.apk</code> file under <strong>Assets</strong>:<br><a class="btn" href="https://github.com/mattias/anki-listening-practice/releases/latest" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>Listening Practice download page</a></li>
+            <li>Open it. If the phone asks, allow your browser to <strong>install unknown apps</strong>. It needs Android 8 or newer.</li>
+          </ol>
+          <h4>Add your cards</h4>
+          <ol>
+            <li>In <a href="#android" data-open>kuma3 Anki</a> or AnkiDroid, export your Mining deck as <code>.apkg</code> with <strong>Include media</strong> ticked.</li>
+            <li>Import the file in Listening Practice and choose the <strong>Kiku</strong> preset. Every card with a sentence and sentence audio is used.</li>
+          </ol>
+          <p>You can also add your own videos with subtitles, or a YouTube video with captions. Each line becomes a sentence.</p>
+          <div class="note"><p><strong>Play patterns:</strong> instead of a fixed number of plays, set steps like 3 plays at 0.85×, then 3 at 0.90×, then 5 at normal speed. The speed goes up as your ear gets used to the sentence.</p></div>
+          <p>The app updates itself, and <a href="#dashboard" data-open>Immersion Dashboard</a> counts your listening time.</p>
+          <a class="btn ghost" href="https://github.com/mattias/anki-listening-practice" target="_blank" rel="noopener">More help</a>
         </div>
       </details>
 
@@ -373,35 +422,33 @@
         <summary><span class="ico">順</span><span class="t"><b>Surasura: which words to learn next</b><span class="d">A word list made from your own books, anime and videos</span></span></summary>
         <div class="tool-body">
           <p><a href="https://github.com/SonicSandbox/surasura" target="_blank" rel="noopener">Surasura</a> reads what you plan to read and watch, and checks which words you already know. Then it lists the words you're missing, with the ones that help you most first. You don't waste time on words you'll never see. It's free, works offline, and does Japanese and Chinese.</p>
+          <p>Since version 3.0 it also <strong>makes your cards</strong>, with the line, its audio and a picture, and keeps Anki's new cards in the order you'll meet the words.</p>
           <h4>1. Install it</h4>
           <ol>
-            <li>Download the newest <code>.zip</code> file from the download page:<br><a class="btn" href="https://github.com/SonicSandbox/surasura/releases/latest" target="_blank" rel="noopener">Surasura download page</a></li>
-            <li>Right-click the ZIP file and choose <strong>Extract All…</strong></li>
-            <li>Open the folder and double-click <code>Surasura.exe</code>. If Windows warns you, click <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+            <li>On the download page, under <strong>Assets</strong>, click <code>Surasura-…-setup.exe</code>. You don't need the other files.<br><a class="btn" href="https://github.com/SonicSandbox/surasura/releases/latest" target="_blank" rel="noopener">Surasura download page</a></li>
+            <li>Double-click it to install. If Windows warns you, click <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+            <li>Have an older Surasura? The same installer brings your known words, word lists and settings over.</li>
           </ol>
-          <h4>2. Tell it which words you know</h4>
+          <h4>2. Set it up</h4>
+          <p>Keep Anki open. Setup asks a few questions:</p>
           <ol>
-            <li>Keep Anki open.</li>
-            <li>Click <strong>Import Known Vocabulary</strong> and choose Anki. It reads your cards straight from Anki. It can also read your known words from Migaku or Jiten.</li>
+            <li><strong>Which words you already know:</strong> choose <strong>From Anki</strong>. It stays in sync with your cards. It can also read lists from Migaku or Jiten.</li>
+            <li><strong>What you'll watch and read:</strong> choose the folder with your books (EPUB), subtitles and audiobooks, or add a YouTube link. Nothing is moved.</li>
+            <li><strong>Where each one goes:</strong> one key per title. <strong>Current</strong> is what you're on now, <strong>Soon</strong> comes next, and <strong>Goal</strong> is for one day.</li>
+            <li>Say yes to keeping Anki's new cards in your order (順), and to cards that make themselves. Setup gets <a href="#anki-miner" data-open>Anki Miner</a> for you. You never need to open its window.</li>
           </ol>
-          <h4>3. Add what you want to read and watch</h4>
+          <div class="note warn"><p>Setup offers to install <strong>AnkiConnect</strong>. Skip that: you already have <strong>AnkiConnect Extended</strong> from <a href="#addons">chapter one</a>, and the normal one doesn't work with this Anki version.</p></div>
+          <div class="note"><p>In your Mining deck's <strong>Options</strong>, set <strong>New card sort order</strong> to <strong>Order gathered</strong>. Otherwise Anki doesn't keep Surasura's order.</p></div>
+          <h4>3. Every day</h4>
           <ol>
-            <li>Open the <strong>Content Manager</strong>. Add e-books (EPUB), subtitle files, or a YouTube video or playlist. It gets YouTube's subtitles for you.</li>
-            <li>No text file for a game or show? Find it on <a href="https://jiten.moe" target="_blank" rel="noopener">Jiten</a> and download its deck as <strong>Full deck</strong> in <strong>chronological order</strong>. Add that deck in the Content Manager with <strong>Extract</strong>, and Surasura turns it into text it can read. This works for everything on Jiten, games included.</li>
-            <li>Drag each one into a tab:
-              <ul>
-                <li><strong>NOW</strong>: what you're reading or watching in the next two weeks or so.</li>
-                <li><strong>Soon</strong>: what you'll get to within six months.</li>
-                <li><strong>6+ months</strong>: things you'd like to manage one day.</li>
-              </ul></li>
+            <li>New episodes, books and videos in your folder show up by themselves in <strong>New arrivals</strong>. Drag them into your order.</li>
+            <li>Click <strong>Generate</strong>, then <strong>Journey ↗</strong>. You see each episode's new words in the order you'll meet them, each with a sentence from your own library.</li>
+            <li>Click <strong>Mine</strong> on an episode. Its cards are made and come next in Anki.</li>
+            <li>Watched an episode? Tick its stone, and its words leave your list.</li>
           </ol>
-          <h4>4. Get your word list</h4>
-          <ol>
-            <li>Click <strong>Generate Journey</strong>. A page opens with your words in the order to learn them, each with example sentences from your own books and shows.</li>
-            <li>It also shows how much of each book or show you already understand, before and after you learn the words.</li>
-          </ol>
-          <div class="note"><p>Two handy extras. <strong>Anki Backlog Order</strong> sorts the new cards waiting in Anki into Surasura's order. Only new cards move, and one click puts the old order back. And next to each word, a link to <a href="https://www.nadeshiko.co" target="_blank" rel="noopener">Nadeshiko</a> finds more real sentences from anime and dramas.</p></div>
-          <p>Stuck? Surasura has its own <a href="https://github.com/SonicSandbox/surasura/blob/main/docs/Surasura%20FAQ.md" target="_blank" rel="noopener">questions and answers</a>. <a href="#workflow">Chapter five</a> shows how I use it every day.</p>
+          <p>No text file for a game? Download its deck from <a href="https://jiten.moe" target="_blank" rel="noopener">Jiten</a> and add it with <strong>+ Add</strong>. Surasura reads Anki deck files (<code>.apkg</code>) too.</p>
+          <div class="note"><p><strong>Piyo ぴよ</strong> lets you practise with your own AI app, on your own words: a short story, a chat or a quiz. Turn it on under <span class="menu">Settings<i>›</i>Connections<i>›</i>Piyo ぴよ</span>. The AI company then sees your words and lines from your books and shows.</p></div>
+          <p>Stuck? Surasura has its own <a href="https://github.com/SonicSandbox/surasura/blob/main/docs/Tutorial.md" target="_blank" rel="noopener">quick guide</a> and <a href="https://github.com/SonicSandbox/surasura/blob/main/docs/Surasura%20FAQ.md" target="_blank" rel="noopener">questions and answers</a>. <a href="#workflow">Chapter five</a> shows how I use it every day.</p>
         </div>
       </details>
 
@@ -432,6 +479,7 @@
             <li>YouTube and YouTube Music count by themselves when the title or channel has Japanese in it. Twitch and Netflix only share the channel or episode name, so mark those as Japanese in <strong>Watching</strong> once.</li>
             <li>To see your phone's watching on your computer too, turn on <strong>Sync between devices</strong> in both apps.</li>
           </ol>
+          <p>Have <a href="#listening" data-open>Listening Practice</a>? The Android app counts its listening time too. Allow it to read the statistics the first time Android asks.</p>
         </div>
       </details>
     </section>
@@ -569,30 +617,24 @@
       <article class="step card">
         <div class="step-head"><div class="step-no">1</div><h3>Find the words to learn next<small>With <a href="#surasura" data-open>Surasura</a></small></h3></div>
         <div class="step-body">
-          <p>Add the book or the show's subtitles to Surasura <strong>before</strong> you start reading or watching. For a game, or anything else without a text file, use its deck from Jiten (see <a href="#surasura" data-open>Surasura</a>). Surasura knows which words you have in Anki, so it lists the words you're missing, the most useful <strong>to you</strong> first. Start at the top of the list. You never need to finish it.</p>
-          <p>The <strong>commonness slider</strong> decides how deep the list goes: only the common words, or nearly all of them. The further you set it, the fewer words you'll meet that you don't know.</p>
+          <p>Put the book or the show's subtitles in your Surasura folder <strong>before</strong> you start reading or watching, and drag it into your order. For a game, or anything else without a text file, use its deck from Jiten (see <a href="#surasura" data-open>Surasura</a>). Surasura knows which words you have in Anki, so it lists the words you're missing, the most useful <strong>to you</strong> first. You never need to finish the list.</p>
+          <p>The <strong>Level</strong> setting decides how deep the list goes: only the common words, or rarer ones too. <em>Automatic</em> picks it for you.</p>
         </div>
       </article>
 
       <article class="step card">
-        <div class="step-head"><div class="step-no">2</div><h3>Make as many cards as possible by themselves<small>With <a href="#anki-miner" data-open>Anki Miner</a></small></h3></div>
+        <div class="step-head"><div class="step-no">2</div><h3>Let Surasura make the cards<small>With <strong>Mine</strong>, which uses <a href="#anki-miner" data-open>Anki Miner</a></small></h3></div>
         <div class="step-body">
-          <p>Anki Miner can find Surasura's words in your subtitles and books and make the cards for you, with the sentence, audio and a picture.</p>
-          <ol>
-            <li>In Surasura's word list, words you already have a card for show an Anki icon. Copy each word <strong>without</strong> that icon into a text file, one word per line, and save it.</li>
-            <li>In Anki Miner, load the file as a <strong>whitelist</strong>.</li>
-            <li>Set the <strong>frequency limit</strong> to <code>1</code> and turn off the other filters, so it takes every word on the list.</li>
-            <li>Run the same books and episodes you added to Surasura through Anki Miner. It finds the sentences Surasura found and makes the cards.</li>
-          </ol>
+          <p>Click <strong>Mine</strong> on the episode or chapter. Each word gets a card cut from its own line, with the sentence, audio and a picture. The new cards go straight into Anki in the order you'll meet the words, and if you move a show, Anki's order follows. Anki has to be open.</p>
         </div>
       </article>
 
       <article class="step card">
         <div class="step-head"><div class="step-no">3</div><h3>Add the rest by hand<small>With Nadeshiko</small></h3></div>
         <div class="step-body">
-          <p>Anki Miner won't find every word. Words that still have no card afterwards get a <a href="https://www.nadeshiko.co" target="_blank" rel="noopener">Nadeshiko</a> link in Surasura. Nadeshiko searches real sentences from anime and dramas for that word. It has its own Anki settings, so you set it up once.</p>
+          <p>Some words don't get a card, for example when no line has clean audio. Search for them on <a href="https://www.nadeshiko.co" target="_blank" rel="noopener">Nadeshiko</a>, which finds real sentences from anime and dramas. It has its own Anki settings, so you set it up once.</p>
           <ol>
-            <li>Click the Nadeshiko link next to the word in Surasura.</li>
+            <li>Search for the word on Nadeshiko.</li>
             <li>Pick a good sentence and add the word with <a href="#hachidori">Hachidori</a>, just like on any web page. This makes the new card.</li>
             <li>Under the same sentence, click <strong>Add</strong>, then <strong>Add to Anki (Last added card)</strong>. Nadeshiko puts the audio and the picture on the card you just made.</li>
           </ol>
@@ -601,9 +643,10 @@
       </article>
 
       <article class="step card">
-        <div class="step-head"><div class="step-no">4</div><h3>Review in Anki<small>The new cards come in Surasura's order</small></h3></div>
+        <div class="step-head"><div class="step-no">4</div><h3>Review in Anki, and listen<small>FSRS decides when each card comes back</small></h3></div>
         <div class="step-body">
-          <p>Use <strong>Anki Backlog Order</strong> (順番) in Surasura to put your new cards in the same order as the list. Do it again when you've added new cards. Then just do your reviews every day. FSRS decides when each card comes back.</p>
+          <p>Do your reviews every day. On a listening card, play the audio two or three times and say the sentence out loud before you turn it over.</p>
+          <p>On the go, <a href="#listening" data-open>Listening Practice</a> loops sentences from your cards where you already know every word.</p>
         </div>
       </article>
 
@@ -622,7 +665,6 @@
         </div>
       </article>
 
-      <div class="note"><p><strong>Coming soon:</strong> Surasura 3.0 talks to Anki Miner directly, so the word file and whitelist aren't needed any more. Surasura makes the sentence cards for exactly the words it wants, and keeps the order of your new cards in Anki up to date by itself. Steps 2 to 4 become one step.</p></div>
     </section>
 
     <!-- Help -->
