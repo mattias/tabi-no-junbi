@@ -184,6 +184,28 @@
             <li>Scroll to <strong>FSRS</strong>, turn it on and choose <strong>FSRS-7</strong>. Click <strong>Save</strong>.</li>
             <li>Once you have a few hundred reviews, come back and click <strong>Optimize</strong>. Do this about once a month.</li>
           </ol>
+          <details class="what">
+            <summary style="cursor:pointer;color:var(--gold)">Remember common words better (optional)</summary>
+            <p>With the Dynamic Desired Retention add-on from step 3, common words come back more often than rare ones, so your reviews go where they pay off most.</p>
+            <ol>
+              <li>In Anki, open <span class="menu">Tools<i>›</i>FSRS Dynamic Desired Retention Table</span>.</li>
+              <li>Under <strong>Field Rules</strong>, add a rule: note type <strong>Kiku</strong>, field <strong>FreqSort</strong>, scope <code>deck:Mining</code>, exclusion <code>is:suspended</code>.</li>
+              <li>Choose <strong>relative</strong> values (Top %), <strong>Higher DR for</strong> lower values, and turn on the smooth steps between rows.</li>
+              <li>Fill in the rows and click <strong>Save</strong>:
+                <div class="table-wrap"><table>
+                  <thead><tr><th>Words</th><th>Desired retention</th></tr></thead>
+                  <tbody>
+                    <tr><td>Top 10% (most common)</td><td>90</td></tr>
+                    <tr><td>Top 20%</td><td>80</td></tr>
+                    <tr><td>Top 33%</td><td>73</td></tr>
+                    <tr><td>Top 50%</td><td>65</td></tr>
+                    <tr><td>Minimum Retention (the rest)</td><td>55</td></tr>
+                  </tbody>
+                </table></div></li>
+              <li>The table shows how many reviews per day each row costs. Too many? Lower the bottom rows first.</li>
+            </ol>
+            <p>Cards without a FreqSort value keep the deck's own retention. The rules sync with your collection, and reach kuma3 Anki too if your version supports them.</p>
+          </details>
           <h4 style="margin:18px 0 4px;color:var(--silver)">Add Kiku</h4>
           <ol>
             <li>Open the download page:<br><a class="btn" href="https://github.com/youyoumu/kiku/releases/latest" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>Kiku download page</a></li>
