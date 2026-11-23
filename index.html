@@ -176,13 +176,17 @@
       </article>
 
       <article class="step card" id="kiku" data-step>
-        <div class="step-head"><div class="step-no">4</div><h3>Turn on FSRS and add the Kiku card design</h3></div>
+        <div class="step-head"><div class="step-no">4</div><h3>Turn on RWKV-Instant and add the Kiku card design</h3></div>
         <div class="step-body">
-          <h4 style="margin:0 0 4px;color:var(--silver)">Turn on FSRS</h4>
+          <h4 style="margin:0 0 4px;color:var(--silver)">Turn on RWKV-Instant</h4>
           <ol>
             <li>Next to your deck, click the ⚙ cog, then <strong>Options</strong>.</li>
-            <li>Scroll to <strong>FSRS</strong>, turn it on and choose <strong>FSRS-7</strong>. Click <strong>Save</strong>.</li>
-            <li>Once you have a few hundred reviews, come back and click <strong>Optimize</strong>. Do this about once a month.</li>
+            <li>Under <strong>Scheduler</strong>, turn on <strong>Machine Learning Based scheduling</strong>.</li>
+            <li>Set <strong>Review scheduler</strong> to <strong>RWKV-Instant</strong>. It picks the reviews whose memory has faded the most, so you review what you're about to forget.</li>
+            <li>Set <strong>Fallback</strong> to <strong>FSRS-7</strong>. It writes the due dates that your phone and the statistics use.</li>
+            <li>Set a daily review limit under <strong>Daily Limits</strong>, for example <strong>150</strong>. With RWKV-Instant, the number of reviews due can change a lot during a session.</li>
+            <li>Under <strong>Display Order</strong>, set the review sort order to <strong>Ascending retrievability</strong>. Click <strong>Save</strong>.</li>
+            <li>Once you have a few hundred reviews, come back and click <strong>Optimize</strong> about once a month. FSRS-7 still needs it for the due dates.</li>
           </ol>
           <details class="what">
             <summary style="cursor:pointer;color:var(--gold)">Remember common words better (optional)</summary>
@@ -649,7 +653,7 @@
       </article>
 
       <article class="step card">
-        <div class="step-head"><div class="step-no">4</div><h3>Review in Anki, and listen<small>FSRS decides when each card comes back</small></h3></div>
+        <div class="step-head"><div class="step-no">4</div><h3>Review in Anki, and listen<small>RWKV-Instant picks which cards come back</small></h3></div>
         <div class="step-body">
           <p>Do your reviews every day. On a listening card, play the audio two or three times and say the sentence out loud before you turn it over.</p>
           <p>On the go, <a href="#listening" data-open>Listening Practice</a> loops sentences from your cards where you already know every word.</p>
