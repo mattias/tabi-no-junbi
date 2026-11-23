@@ -135,7 +135,7 @@
             <li>Double-click the downloaded file and click <strong>Next</strong> until it's installed.</li>
             <li>Open Anki. Your decks are still there.</li>
           </ol>
-          <div class="note"><p>Tested with version <code>26.09.3+fsrs7</code>, builds 109 and 110. If a newer build gives you trouble, pick build 110 from the <a href="https://github.com/JSchoreels/anki/releases" target="_blank" rel="noopener">list of all versions</a>.</p></div>
+          <div class="note"><p>I use the newest build, now <code>26.09.4+fsrs7</code> build 115. If a new build gives you trouble, pick the one before it from the <a href="https://github.com/JSchoreels/anki/releases" target="_blank" rel="noopener">list of all versions</a>.</p></div>
           <label class="check"><input type="checkbox"> Done</label>
         </div>
       </article>
@@ -281,7 +281,14 @@
           <h4>Every day</h4>
           <p>Tap <strong>Sync</strong> before and after you review, on both the phone and the computer. Then you always carry on where you left off.</p>
           <div class="note"><p>kuma3 Anki installs <strong>next to</strong> normal AnkiDroid and keeps its own cards. If you also have AnkiDroid, use only one of them for reviews so you don't get two different histories.</p></div>
-          <div class="note"><p><strong>Using RWKV on your computer?</strong> (That's an extra option in Deck Options for the FSRS-7 version of Anki.) Make the phone use the same model: in kuma3 Anki, open <span class="menu">Settings<i>›</i>kuma3</span> and choose <strong>Small</strong> for the model and <strong>int4 cards, int8 notes</strong> for the state precision. Otherwise the two can pick slightly different cards.</p></div>
+          <h4>Make RWKV-Instant pick the same cards as on your computer</h4>
+          <p>The scheduler settings from <a href="#kiku">chapter one, step 4</a> (RWKV-Instant, FSRS-7 as fallback, review limit and sort order) belong to the deck's preset, so the phone gets them when you sync. The model is set on each device, so set it once by hand:</p>
+          <ol>
+            <li>On your computer, open your deck's <strong>Options</strong> and look under <span class="menu">RWKV<i>›</i>Advanced</span>: note the <strong>model size</strong> (Big, Small or Tiny), the <strong>storage precision</strong>, and whether <strong>Use one model for RWKV</strong> is on.</li>
+            <li>In kuma3 Anki, open <span class="menu">Settings<i>›</i>kuma3</span> and choose the same three. I use <strong>Small</strong>, <strong>int8 (cards and notes)</strong>, and one model <strong>off</strong>.</li>
+            <li>kuma3 Anki then rebuilds its RWKV state once in the background. It takes a few seconds to a minute, and reviews use the normal order meanwhile.</li>
+          </ol>
+          <div class="note"><p>Slow after each answer with many reviews due? In the deck's <strong>Options</strong> on the phone, under <strong>RWKV</strong>, turn on <strong>Use faster, approximate queue updates</strong>.</p></div>
           <a class="btn ghost" href="https://github.com/Pedrubik2000/kuma3-anki-app/blob/rwkv/RWKV.md" target="_blank" rel="noopener">More about kuma3 Anki</a>
         </div>
       </details>
